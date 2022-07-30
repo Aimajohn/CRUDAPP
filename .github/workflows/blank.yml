@@ -24,18 +24,16 @@ jobs:
         node-version: [12.x]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/chechout@v2
-    - name: Use Node.js ${{matrix.node-version}}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version}}
-        
-    - run: npm ci
-    - run: npm run dev
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3.4.1
-      with: 
-        HOST: ${{secrets.HOST }}
-        DATABASE_USER: ${{secrets.DATABASE_USER}}
-        PASSWORD: ${{secrets.PASSWORD}}
-        DATABASE: ${{secrets.DATABASE}}
+      - uses: actions/setup-node@v1
+      - name: Setup Node.js environment
+        with:
+          node-version: ${{ matrix.node-version}} 
+      - run: npm ci
+      - run: npm run dev
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.4.1
+        with: 
+          HOST: ${{secrets.HOST }}
+          DATABASE_USER: ${{secrets.DATABASE_USER}}
+          PASSWORD: ${{secrets.PASSWORD}}
+          DATABASE: ${{secrets.DATABASE}}
