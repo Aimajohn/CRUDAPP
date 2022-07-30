@@ -1,0 +1,83 @@
+<%- include('partials/_header'); %>
+    
+    <main>
+        <div class="formContainer">
+            <h3 class="formTitle">
+                Sumate a la lista!
+            </h3>
+            <Form action="/add" method="post">
+                <div class="formInputContainer">
+                    <span class="inputTitle">Ingresa un nombre</span>
+                    <input type="text" class="formInput" name="name" placeholder="Yon" autocomplete="no">
+                </div>
+                <div class="formInputContainer">
+                    <span class="inputTitle">Escribe tu mensaje</span>
+                    <textarea id="textarea" class="formInput" rows="5" name="message" placeholder="Comment here!"></textarea>
+                </div>
+                <button type="submit" class="formSubmit" id="specialMove"> Comment </button>
+            </Form>
+        </div>
+        <div class="rankingOfKings">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="tableTitle thId">N#</th>
+                        <th class="tableTitle">Nombre</th>
+                        <th class="thMessage tableTitle">Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data) { %> 
+                        <% for(let i=0; i<data.length; i++){ %>
+                            <tr>
+                                <th class="thId"><%= data[i].id %> </th>
+                                <th><%= data[i].name %> </th>
+                                <th class="thMessage">
+                                    <%= data[i].message %> 
+                                    <% if(data[i].id == myid[0]){ %>
+                                        <div id="actions" >
+                                            <a class="material-symbols-outlined" href="/edit/<%=myid[0]%>">edit</a>  
+                                            <a class="material-symbols-outlined" href="/delete/<%=myid[0]%>">delete</a>  
+                                        </div>
+                                        <% } %> 
+                                </th>
+                                <!-- <th>
+                                    <a href="/delete/<%=data[i].id%>">Delete</a>  
+                                </th>
+                                <th>
+                                    <a href="/edit/<%=data[i].id%>">Edit</a>  
+                                </th> -->
+                            </tr>
+                        <%} %>
+                    <% } %> 
+                </tbody>
+            </table>
+        </div>
+        <div class="rankingForPhones">
+            <% const iconSet = ['highlight', 'filter_drama', 'invert_colors', 'hdr_weak', 'stadia_controller', 'chair', 'grass'] %> 
+            <h3 class="rankingPhonesTitle">Comentarios Subidos</h3>
+            <% if(data){ %> 
+                <% for(let i=0; i<data.length; i++){ %>
+                    <article class="comment">
+                        <span id="icon" class=" material-symbols-outlined">
+                            <%= iconSet[Math.ceil(Math.random()*iconSet.length)-1] %> 
+                        </span>
+                        <div class="commentContainer">
+
+                            <div class="commentHeader">
+                                <h4><%= data[i].name %> </h4>
+                            </div>
+                            <div class="commentBody">
+                                <p>
+                                    <%= data[i].message %> 
+                                </p>
+                            </div>
+                        </div>
+                        <span class="weba">editar y eliminar (me dio weba hacerlos)</span>
+                    </article>
+                <% } %> 
+            <% } %> 
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+   <% include('partials/_footer'); %> 

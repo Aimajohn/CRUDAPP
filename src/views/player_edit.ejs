@@ -1,0 +1,12 @@
+<% include('partials/_header') %> 
+<form action="/edit/<%= data.id %>" method="post">
+    <div class="formInputContainer">
+        <input type="text" class="formInput" name="name" value = '<%= data.name %> '>
+    </div>
+    <div class="formInputContainer">
+        <input type="text" class="formInput" name="message" value = '<%= data.message %> '>
+    </div>
+    <button type="submit" class="formSubmit"> Update </button>
+</form>
+
+<% include('partials/_footer') %> 

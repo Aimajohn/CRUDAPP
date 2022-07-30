@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: large;
+}
+h1{
+    font-size: xx-large;
+    line-height: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+
+}
+header{
+    padding: 20px;
+    background-color: rgb(78, 13, 139);
+    color: whitesmoke;
+    min-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.formContainer{
+    padding: 10px;   
+    margin-bottom: auto;
+    padding-bottom: 30px; 
+    box-shadow: 0px 1px 5px 1px rgb(156, 156, 156);
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 185px;
+    margin-bottom: 50px;
+}
+Form{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    
+    color: rgb(31, 31, 31);
+}
+.formInputContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.formTitle, .rankingPhonesTitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: rgb(101, 32, 165);
+
+}
+textarea{
+    resize: none;
+}
+.formInput{
+    margin-block: 5px;
+    border: 2px solid rgb(150, 150, 150);
+    padding: 5px;
+    width: 100%;
+    font-weight: 500;
+}
+.formInput:focus{
+    outline: none;
+    border: 2px solid rgb(101, 32, 165);
+}
+.formSubmit{
+    background-color: rgb(101, 32, 165);
+    color: whitesmoke;
+    border: 1px solid rgba(43, 0, 43, 0.288);
+    height: 35px;
+}
+.formSubmit:hover{
+    background-color: rgb(78, 0, 78) ;
+    cursor: pointer;
+    color: white;
+}
+
+.rankingOfKings{
+    display: none;
+    padding-inline: 30px;
+    padding-block: 20px;
+    justify-content: center;
+    box-shadow: 0px 1px 5px 1px rgb(156, 156, 156);
+    width: 55%;
+}
+table{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+th{
+    border: 1px solid rgb(168, 75, 255);
+    margin: 0;
+    padding-block: 10px;
+    padding-inline: 15px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    color: rgb(61, 61, 61);
+}
+tr{
+    display: flex;
+}
+thead, tbody{
+    width: 100%;
+}
+.tableTitle{
+    background-color: rgb(101, 32, 165);
+    color: white;
+    border: 1px solid rgb(37, 37, 37);
+    border-bottom: none;
+}
+.thMessage{
+    width: 70%;
+    position: relative;
+}
+.thId{
+    justify-content: center;
+    width: 10%;
+}
+#actions{
+    right: 10px;
+    position: absolute;
+    display: none;
+}
+.material-symbols-outlined{
+    padding-right: 5px;
+    text-decoration: none;
+    color: blueviolet;
+}
+.rankingForPhones{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items:center;
+    
+}
+.rankingPhonesTitle{
+    margin-bottom: 20px;
+}
+.comment{
+    padding-inline: 20px;
+    padding-block: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    width: calc(90% - 40px);
+    background-color: rgb(243, 234, 250);
+    border-radius: 10px;
+    align-content: center;
+}
+.commentContainer{
+    flex-direction: column;
+    display: flex;
+}
+#icon{
+    font-size: 35px;
+    height: 35px;
+    text-align: center;
+    margin-right: 10px;
+}
+.commentHeader{
+    margin-bottom: 5px;
+}
+.weba{
+    font-size: xx-small;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For mobile Desktop: */
+    main{
+        flex-direction: row;
+    }
+    .rankingOfKings{
+        display: flex;
+    }
+    .formContainer{
+        width: 20%;
+    }
+    .rankingForPhones{
+        display: none;
+    }
+    
+}
