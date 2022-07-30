@@ -21,11 +21,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
   # Single deploy job since we're just deploying
   deploy:
+    env:
+      HOST: ${{secrets.bb5qeieo5qjjnhmuo8mf-mysql.services.clever-cloud.com }}
+      DATABASE_USER: ${{secrets.ufip9t18tynhohn5}}
+      PASSWORD: ${{secrets.rq0k23Z8dIZY8u0nexf8}}
+      DATABASE: ${{secrets.bb5qeieo5qjjnhmuo8mf}}
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }},
+      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
+        
