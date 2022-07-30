@@ -19,7 +19,7 @@ app.use(myConnection(mysql, {
     host: process.env.HOST,
     user: process.env.DATABASE_USER,
     password: process.env.PASSWORD,
-    port: 3306,
+    port: process.env.DATABASE_PORT,
     database: process.env.DATABASE
 }, 'single'))
 app.use(express.urlencoded({extended: false}))
